@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] EnemyHealth health;
+    private float attackDamage = 10f;
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (health != null)
+            {
+                health.EnemyTakeDamage(attackDamage);
+            }
+        }
     }
 }
