@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    [SerializeField] GameObject Melee;
     [SerializeField] EnemyHealth health;
     private float attackDamage = 10f;
 

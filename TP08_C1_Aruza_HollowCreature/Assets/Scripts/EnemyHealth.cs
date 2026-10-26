@@ -3,7 +3,8 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    private float maxHealth = 100f;
+    [SerializeField] private GameObject enemy;
+    private float maxHealth = 50f;
     private float currentHealth = 0f;
     [SerializeField] private Image healthBar;
 
@@ -16,5 +17,14 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth -= amount;
         healthBar.fillAmount = currentHealth / maxHealth;
+        if (currentHealth <= 0f)
+        {
+            EnemyDie();
+        }
+    }
+
+    private void EnemyDie()
+    {
+        Destroy(enemy, 1f);
     }
 }
