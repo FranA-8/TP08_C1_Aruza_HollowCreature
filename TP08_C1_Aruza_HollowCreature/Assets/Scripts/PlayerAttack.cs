@@ -2,18 +2,41 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] GameObject Melee;
-    [SerializeField] EnemyHealth health;
+    [SerializeField] private Transform attackPosition;
+    [SerializeField] private EnemyHealth health;
+    [SerializeField] private Animator animator;
     private float attackDamage = 10f;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Update()
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (health != null)
+            MeleeAttack();
+        }
+    }
+
+    private void MeleeAttack()
+    {
+        animator.SetTrigger("IsAttacking");
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPosition.position, 1f);
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.gameObject.CompareTag("Enemy"))
             {
-                health.EnemyTakeDamage(attackDamage);
+                if (health != null)
+                {
+
+                    health.EnemyTakeDamage(attackDamage);
+                    animator.SetTrigger("IsAttacking");
+                }
             }
         }
+
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPosition.position, 1f);
     }
 }
