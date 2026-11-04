@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
     private Rigidbody2D rb;
     private float moveSpeed = 1000f;
 
@@ -12,14 +13,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        animator.SetBool("IsRunning", false);
         if (Input.GetKey(KeyCode.D))
         {
-
+            animator.SetBool("IsRunning", true);
             rb.AddForce(Vector2.right * (moveSpeed * Time.deltaTime), ForceMode2D.Force);
         }
         if (Input.GetKey(KeyCode.A))
         {
-
+            animator.SetBool("IsRunning", true);
             rb.AddForce(Vector2.left * (moveSpeed * Time.deltaTime), ForceMode2D.Force);
         }
 
