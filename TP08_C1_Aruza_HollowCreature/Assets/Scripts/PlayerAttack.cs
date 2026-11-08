@@ -5,7 +5,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform attackPosition;
     [SerializeField] private EnemyHealth health;
     [SerializeField] private Animator animator;
-    private float attackDamage = 10f;
+    [SerializeField] private float attackDamage = 10f;
+    [SerializeField] private float maxDamage = 30f;
 
     private void Update()
     {
@@ -38,5 +39,13 @@ public class PlayerAttack : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPosition.position, 1f);
+    }
+    public void GetDamageUp(float amount)
+    {
+        attackDamage += amount;
+        if (attackDamage > maxDamage)
+        {
+            attackDamage = maxDamage;
+        }
     }
 }
