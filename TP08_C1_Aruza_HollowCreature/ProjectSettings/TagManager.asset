@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Enemy
+  - Invencibility
   layers:
   - Default
   - TransparentFX

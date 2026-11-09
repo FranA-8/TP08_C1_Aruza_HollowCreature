@@ -3,24 +3,38 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private InvencibilityManager manager;
     [SerializeField] private GameObject player;
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float currentHealth = 0f;
     [SerializeField] private Image healthBar;
+    [SerializeField] private GameObject invencibility;
+    private bool isInmortal = false;
 
     private void Start()
     {
         currentHealth = maxHealth;
     }
-
+    public void InvicibilityOn(bool value)
+    {
+        isInmortal = value;
+    }
+    public bool GetInvencibility(float amount)
+    {
+        return isInmortal;
+    }
     public void PlayerTakeDamage(float amount)
     {
-        currentHealth -= amount;
-        healthBar.fillAmount = currentHealth / maxHealth;
-        if (currentHealth <= 0f)
+        if (isInmortal != true)
         {
-            Die();
+            currentHealth -= amount;
+            healthBar.fillAmount = currentHealth / maxHealth;
+            if (currentHealth <= 0f)
+            {
+                Die();
+            }
         }
+
     }
 
     public void Die()
@@ -36,5 +50,15 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = maxHealth;
         }
         healthBar.fillAmount = currentHealth / maxHealth;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Invencibility"))
+        {
+            manager.ActivateInvencibility();
+
+            Destroy(invencibility, 1f);
+        }
     }
 }
