@@ -40,4 +40,6 @@ Explore the cave, defeat its monsters, collect coins and power-ups, and gather t
 
 ## Developer
 Developed by Franco Aruza.
+https://github.com/FranA-8
+https://frana8.itch.io
 
