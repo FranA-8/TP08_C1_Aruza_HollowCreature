@@ -2,17 +2,24 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    [SerializeField] private AudioSource attackSound;
+    [SerializeField] private PlayerDataSo data;
     [SerializeField] private Transform attackPosition;
     [SerializeField] private EnemyHealth health;
     [SerializeField] private Animator animator;
     [SerializeField] private float attackDamage = 10f;
     [SerializeField] private float maxDamage = 30f;
 
+    private void Start()
+    {
+        attackDamage = data.playerDamage;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             MeleeAttack();
+            attackSound.Play();
         }
     }
 

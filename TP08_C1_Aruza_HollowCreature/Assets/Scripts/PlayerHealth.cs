@@ -3,6 +3,12 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private AudioSource invencibilitySound;
+    [SerializeField] private Animator animator;
+    [SerializeField] private AudioSource damageSound;
+    [SerializeField] private AudioSource deathSound;
+    [SerializeField] private PlayerDataSo data;
     [SerializeField] private InvencibilityManager manager;
     [SerializeField] private GameObject player;
     [SerializeField] private float maxHealth = 100f;
@@ -13,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        maxHealth = data.playerMaxHealth;
         currentHealth = maxHealth;
     }
     public void InvicibilityOn(bool value)
@@ -29,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth -= amount;
             healthBar.fillAmount = currentHealth / maxHealth;
+            damageSound.Play();
             if (currentHealth <= 0f)
             {
                 Die();
@@ -39,7 +47,11 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
-        Destroy(player, 1f);
+        animator.SetTrigger("HasDied");
+        deathSound.Play();
+        Destroy(player, 2f);
+        Instantiate(player, transform.position, Quaternion.identity);
+        gameOverPanel.SetActive(true);
     }
 
     public void GetHealthUp(float amount)

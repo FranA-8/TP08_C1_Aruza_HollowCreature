@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
+    [SerializeField] private AudioSource jumpSound;
+    [SerializeField] private PlayerDataSo data;
     private float jumpForce = 8.5f;
     private Rigidbody2D rb;
     bool canJump = false;
@@ -9,6 +11,10 @@ public class PlayerJump : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+    private void Start()
+    {
+        jumpForce = data.playerJumpForce;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -32,8 +38,18 @@ public class PlayerJump : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
+            jumpSound.Play();
+
             canJump = false;
         }
 
     }
+
+    public void GetJumpUp(float amount)
+    {
+        jumpForce += amount;
+    }
 }
+        
+    
+

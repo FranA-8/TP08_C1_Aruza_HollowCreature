@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UiGameOverMenu : MonoBehaviour
 {
-    private AudioSource audioSource;
+    [SerializeField] private GameObject player;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private Button tryAgainButton;
     [SerializeField] private Button exitButton;
@@ -15,7 +15,6 @@ public class UiGameOverMenu : MonoBehaviour
     {
         tryAgainButton.onClick.AddListener(OnTryAgainButtonClicked);
         exitButton.onClick.AddListener(OnExitButtonClicked);
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnDestroy()
@@ -34,6 +33,7 @@ public class UiGameOverMenu : MonoBehaviour
     {
         gameOverPanel.SetActive(false);
         isPaused = false;
+        player.transform.position = new Vector2(-4, -4);
         canPause = true;
         Time.timeScale = 1f;
     }

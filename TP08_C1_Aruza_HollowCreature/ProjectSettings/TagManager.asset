@@ -7,6 +7,8 @@ TagManager:
   - Floor
   - Enemy
   - Invencibility
+  - FinalDoor
+  - Wall
   layers:
   - Default
   - TransparentFX
