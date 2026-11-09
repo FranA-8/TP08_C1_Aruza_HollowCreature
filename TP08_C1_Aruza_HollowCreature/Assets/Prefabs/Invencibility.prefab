@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8978147661287537492}
   - component: {fileID: 2709611920827227911}
   - component: {fileID: 8490345439037885945}
+  - component: {fileID: 4437372736064229334}
   m_Layer: 0
   m_Name: Invencibility
   m_TagString: Invencibility
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 32.950302, y: 16.11458, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3590624507211103981}
@@ -47,6 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7281cd1d9ccc23b4f844ee499b4e6343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InvencibilityPowerUp
+  animator: {fileID: 4437372736064229334}
+  invencibilityUpSound: {fileID: 8490345439037885945}
   player: {fileID: 0}
   invencibilityCountDownPanel: {fileID: 0}
   invencibilityNumberText: {fileID: 0}
@@ -244,6 +247,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &4437372736064229334
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601959360150494584}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 68ca2d75c56d08445a1a678081c70698, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7095725835117001625
 GameObject:
   m_ObjectHideFlags: 0

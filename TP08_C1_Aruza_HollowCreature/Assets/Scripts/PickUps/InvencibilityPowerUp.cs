@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class InvencibilityPowerUp : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
+    [SerializeField] private AudioSource invencibilityUpSound;
     [SerializeField] private PlayerHealth player;
     [SerializeField] private GameObject invencibilityCountDownPanel;
     [SerializeField] private TMP_Text invencibilityNumberText;
@@ -15,6 +17,8 @@ public class InvencibilityPowerUp : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player.InvicibilityOn(true);
+            invencibilityUpSound.Play();
+            animator.SetTrigger("PickedUp");
             timer = invencibilityTimer;
             collected = true;
         }
@@ -25,14 +29,8 @@ public class InvencibilityPowerUp : MonoBehaviour
         {
             timer -= Time.deltaTime;
 
-            invencibilityCountDownPanel.SetActive(true);
-
-            invencibilityNumberText.text = timer.ToString("f0");
-
             if (timer <= 0)
             {
-                invencibilityCountDownPanel.SetActive(false);
-
                 player.InvicibilityOn(false);
 
                 collected = false;

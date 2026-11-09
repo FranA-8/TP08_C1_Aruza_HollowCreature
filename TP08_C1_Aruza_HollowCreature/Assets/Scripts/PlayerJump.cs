@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private PlayerDataSo data;
     private float jumpForce = 8.5f;
@@ -39,6 +40,8 @@ public class PlayerJump : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
             jumpSound.Play();
+
+            animator.SetTrigger("IsJumping");
 
             canJump = false;
         }

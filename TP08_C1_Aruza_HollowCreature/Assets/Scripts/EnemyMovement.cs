@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private bool isFacingRight;
     private Rigidbody2D rb;
@@ -12,6 +13,7 @@ public class EnemyMovement : MonoBehaviour
     }
     private void Update()
     {
+        animator.SetBool("IsMoving", true);
         rb.linearVelocity = new Vector2(moveSpeed, rb.linearVelocity.y);
     }
     private void OnCollisionEnter2D(Collision2D collision)

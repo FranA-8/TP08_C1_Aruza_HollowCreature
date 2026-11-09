@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
     [SerializeField] private GameObject enemy;
     private float maxHealth = 50f;
     private float currentHealth = 0f;
@@ -25,6 +26,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void EnemyDie()
     {
+        animator.SetTrigger("HasDied");
         Destroy(enemy, 1f);
     }
 }

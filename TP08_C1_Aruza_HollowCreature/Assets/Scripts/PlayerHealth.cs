@@ -16,11 +16,15 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Image healthBar;
     [SerializeField] private GameObject invencibility;
     private bool isInmortal = false;
+    private bool isDead = false;
+    private float timer;
+    private float deathTimer = 2f;
 
     private void Start()
     {
         maxHealth = data.playerMaxHealth;
         currentHealth = maxHealth;
+        healthBar.fillAmount = currentHealth / maxHealth;
     }
     public void InvicibilityOn(bool value)
     {
@@ -50,8 +54,19 @@ public class PlayerHealth : MonoBehaviour
         animator.SetTrigger("HasDied");
         deathSound.Play();
         Destroy(player, 2f);
-        Instantiate(player, transform.position, Quaternion.identity);
-        gameOverPanel.SetActive(true);
+    }
+    private void Update()
+    {
+        if (isDead == true)
+        {
+            timer = deathTimer;
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                gameOverPanel.SetActive(true);
+            }
+        }
+
     }
 
     public void GetHealthUp(float amount)

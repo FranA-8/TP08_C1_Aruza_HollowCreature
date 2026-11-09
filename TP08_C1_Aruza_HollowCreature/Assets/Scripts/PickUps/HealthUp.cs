@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class HealthUp : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
     [SerializeField] private AudioSource healthUpSound;
     [SerializeField] private PlayerHealth player;
     [SerializeField] private float healthUpAmount = 20f;
@@ -12,6 +13,7 @@ public class HealthUp : MonoBehaviour
         {
             player.GetHealthUp(healthUpAmount);
             healthUpSound.Play();
+            animator.SetTrigger("PickedUp");
             Destroy(gameObject, 1f);
         }
     }

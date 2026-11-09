@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7559592010306083686}
   - component: {fileID: 6413067947566210550}
   - component: {fileID: 5521956338878041741}
+  - component: {fileID: 5542585784499668187}
   m_Layer: 0
   m_Name: DamageUp
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -22.42, y: -6.82, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 295558694374510372}
@@ -47,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e2d2ae8bff40af4ab72c2bacfa18c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageUp
-  damageUpSound: {fileID: 0}
+  animator: {fileID: 5542585784499668187}
+  damageUpSound: {fileID: 5521956338878041741}
   player: {fileID: 0}
   damageUpAmount: 5
 --- !u!212 &7559592010306083686
@@ -242,6 +244,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &5542585784499668187
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066393873926076911}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 931dc5395a941374ba922cfd977a7721, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8392388945926683953
 GameObject:
   m_ObjectHideFlags: 0

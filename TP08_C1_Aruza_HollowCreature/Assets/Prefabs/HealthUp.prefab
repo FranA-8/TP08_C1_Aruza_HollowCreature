@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4549082766237045992}
   - component: {fileID: 5431507276575037977}
   - component: {fileID: 293647282118243483}
+  - component: {fileID: 4870761842612347847}
   m_Layer: 0
   m_Name: HealthUp
   m_TagString: Untagged
@@ -47,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce346a104404924c9480e6d1e0d8c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthUp
-  healthUpSound: {fileID: 0}
+  animator: {fileID: 4870761842612347847}
+  healthUpSound: {fileID: 293647282118243483}
   player: {fileID: 0}
   healthUpAmount: 20
 --- !u!212 &4549082766237045992
@@ -252,6 +254,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &4870761842612347847
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107922085093088949}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bdc3c839513c0be4bb414a626dcdbbb6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6615107657712275309
 GameObject:
   m_ObjectHideFlags: 0
