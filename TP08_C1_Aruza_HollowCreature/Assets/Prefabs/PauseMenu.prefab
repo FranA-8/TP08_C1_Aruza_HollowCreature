@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2be7b70e984b51444aca9c12ae4723a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00c5d23142378864f8bd231257d54415, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2be7b70e984b51444aca9c12ae4723a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00c5d23142378864f8bd231257d54415, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2be7b70e984b51444aca9c12ae4723a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00c5d23142378864f8bd231257d54415, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -841,7 +841,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2be7b70e984b51444aca9c12ae4723a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00c5d23142378864f8bd231257d54415, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1165,7 +1165,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7738061539461463492}
-  - component: {fileID: 2827657595691710343}
   - component: {fileID: 8817176802258251076}
   - component: {fileID: 6719939472882503416}
   - component: {fileID: 6103679385975875343}
@@ -1199,27 +1198,6 @@ RectTransform:
   m_AnchoredPosition: {x: 7.0441895, y: 2.3480225}
   m_SizeDelta: {x: 61.0493, y: 42.2649}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2827657595691710343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9011962496431540258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5c010b904bf1bc47a8408ca16b85f4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UiPauseMenu
-  pauseMenuPanel: {fileID: 9011962496431540258}
-  settingsMenuPanel: {fileID: 0}
-  creditsMenuPanel: {fileID: 0}
-  continueButton: {fileID: 3658261006342878851}
-  exitButton: {fileID: 5446975152802147147}
-  settingsButton: {fileID: 1470417329521711812}
-  creditsButton: {fileID: 9195269850974253532}
-  backSettingsButton: {fileID: 0}
-  backCreditsButton: {fileID: 0}
 --- !u!222 &8817176802258251076
 CanvasRenderer:
   m_ObjectHideFlags: 0

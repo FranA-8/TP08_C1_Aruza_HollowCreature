@@ -44,22 +44,22 @@ public class UiSettingsMenu : MonoBehaviour
     private void OnVolumeMasterChanged(float value)
     {
         volumeMasterNumber.text = value.ToString("f0");
-        mixer.SetFloat("VolumeMaster", value);
+        mixer.SetFloat("Master", value);
     }
     private void OnVolumeBackgroundChanged(float value)
     {
         volumeBackgroundNumber.text = value.ToString("f0");
-        mixer.SetFloat("VolumeBackground", value);
+        mixer.SetFloat("Background", value);
     }
     private void OnVolumeSFXChanged(float value)
     {
         volumeSFXNumber.text = value.ToString("f0");
-        mixer.SetFloat("VolumeSFX", value);
+        mixer.SetFloat("Sfx", value);
     }
     private void OnVolumeUiChanged(float value)
     {
         volumeUiNumber.text = value.ToString("f0");
-        mixer.SetFloat("VolumeUi", value);
+        mixer.SetFloat("Ui", value);
     }
 
 

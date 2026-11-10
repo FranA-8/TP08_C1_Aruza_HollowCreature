@@ -10,6 +10,8 @@ public class UiVictoryMenu : MonoBehaviour
     [SerializeField] private Button exitButton;
     bool isPaused = false;
     bool canPause = false;
+    private float playerSpawnPointX = -4f;
+    private float playerSpawnPointY = -4f;
 
     private void Awake()
     {
@@ -33,7 +35,7 @@ public class UiVictoryMenu : MonoBehaviour
     {
         victoryPanel.SetActive(false);
         isPaused = false;
-        player.transform.position = new Vector2(-4, -4);
+        player.transform.position = new Vector2(playerSpawnPointX, playerSpawnPointY);
         canPause = true;
         Time.timeScale = 1f;
     }

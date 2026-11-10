@@ -13,7 +13,6 @@ public class VictoryZone : MonoBehaviour
             victoryPanel.SetActive(true);
             Time.timeScale = 0f;
             victorySound.Play();
-            Destroy(player, 1f);
         }
     }
 }

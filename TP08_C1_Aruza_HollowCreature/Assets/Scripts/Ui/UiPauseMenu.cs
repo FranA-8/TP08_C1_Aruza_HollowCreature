@@ -14,8 +14,8 @@ public class UiPauseMenu : MonoBehaviour
     [SerializeField] private Button creditsButton;
     [SerializeField] private Button backSettingsButton;
     [SerializeField] private Button backCreditsButton;
-    bool isPaused = false;
-    bool canPause = true;
+    public bool isPaused = false;
+    private bool canPause = true;
 
     private void Awake()
     {

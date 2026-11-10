@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class KeyManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource doorSound;
     [SerializeField] private TMP_Text keyText;
     [SerializeField] private GameObject finalDoor;
     private int collectableAmaunt;
@@ -21,6 +22,7 @@ public class KeyManager : MonoBehaviour
     {
         if (collectableAmaunt == neededKeys)
         {
+            doorSound.Play();
             Destroy(finalDoor, 2f);
         }
     }
