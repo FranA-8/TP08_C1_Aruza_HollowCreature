@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [SerializeField] private AudioSource enemyDeath;
+    [SerializeField] private AudioSource enemyHitSound;
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject enemy;
     private float maxHealth = 50f;
@@ -18,6 +20,7 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth -= amount;
         healthBar.fillAmount = currentHealth / maxHealth;
+        enemyHitSound.Play();
         if (currentHealth <= 0f)
         {
             EnemyDie();
@@ -26,6 +29,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void EnemyDie()
     {
+        enemyDeath.Play();
         animator.SetTrigger("HasDied");
         Destroy(enemy, 1f);
     }

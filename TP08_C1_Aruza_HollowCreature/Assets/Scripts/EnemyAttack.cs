@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
+    [SerializeField] private AudioSource attackSound;
     [SerializeField] PlayerHealth health;
     private float attackDamage = 10f;
 
@@ -11,6 +12,7 @@ public class EnemyAttack : MonoBehaviour
         {
             if (health != null)
             {
+                attackSound.Play();
                 health.PlayerTakeDamage(attackDamage);
             }
         }
